@@ -5,6 +5,7 @@ import os
 import yaml
 from datetime import date
 from utils import MatchData
+import shutil
 
 yaml_file = yaml.load(open("keys.yaml"), Loader=yaml.FullLoader)
 
@@ -42,6 +43,9 @@ def getRecord(firstTeam, secondTeam):
         results['tie']=results['tie']+result['tie']
         matches[year]=newMatches
     total=results[firstTeam]+results[secondTeam]+results['tie']
+    if total==0:
+        shutil.copy("static/no_data.png","static/graph.png")
+        return []
     labels = []
     sizes = []
     if results[firstTeam]!=0:
@@ -66,18 +70,11 @@ def getRecord(firstTeam, secondTeam):
             info.append(match)
     path=os.getcwd()
     try:
-        os.remove(path+"\\"+"static\graph"+str(firstTeam)+"vs"+str(secondTeam)+".png")
+        os.remove(path+"/static/graph.png")
     except Exception:
         pass
-    try:
-        os.remove(path+"\\"+"static\graph"+str(secondTeam)+"vs"+str(firstTeam)+".png")
-    except Exception:
-        pass
-    if total==0:
-        return info, 'no_data.png'
-    else:
-        plt.savefig("static\graph"+str(firstTeam)+"vs"+str(secondTeam)+".png")
-        return info, "graph"+str(firstTeam)+"vs"+str(secondTeam)+".png"
+    plt.savefig(path+"/static/graph.png")
+    return info
 
 def getDataForYear(year, firstTeam, secondTeam):
     results={

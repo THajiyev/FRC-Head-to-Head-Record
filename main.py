@@ -13,8 +13,8 @@ def home():
         try:
             team1 = int(team1)
             team2 = int(team2)
-            info, path = GraphGenerator.getRecord(team1, team2)
-            return render_template('index.html', haveContent=True, information=info, path=path, team1=str(team1), team2=str(team2))
+            info = GraphGenerator.getRecord(team1, team2)
+            return render_template('index.html', haveContent=True, information=info, team1=str(team1), team2=str(team2))
         except Exception:
             return render_template('index.html', haveContent=False)
     return render_template('index.html', haveContent=False)

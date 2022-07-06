@@ -34,10 +34,11 @@ Those include:
 - os
 - datetime
 - functools
+- shutil
 
 
 ## How does it work
-Once the user inputs 2 FRC teams, the backend code will iterate through all matches available for one of the teams since both teams existed. It will check for matches where the two teams played on opposite alliances. All this data will be collected and displayed. The user will see the pie chart showing what percent of matches each team has won and can look at scores from each match. The pie charts for any two teams are saved locally in the folder titled static, but they will be updated if the user inputs those two teams again.
+Once the user inputs 2 FRC teams, the backend code will iterate through all matches available for one of the teams since both teams existed. It will check for matches where the two teams played on opposite alliances. All this data will be collected and displayed. The user will see the pie chart showing what percent of matches each team has won and can look at scores from each match. 
 
 ## Input Teams
 <a href="https://drive.google.com/uc?export=view&id=<FILEID>"><img src="https://drive.google.com/uc?export=view&id=1hcSJw_dicGwlK-qTbPse1tIbBIx2nssy" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture"/>
