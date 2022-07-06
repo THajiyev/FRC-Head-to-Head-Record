@@ -1,11 +1,12 @@
 import requests
 import matplotlib.pyplot as plt
 import concurrent.futures
-import os
 import yaml
 from datetime import date
 from utils import MatchData
-import shutil
+from PIL import Image
+import base64
+import io
 
 yaml_file = yaml.load(open("keys.yaml"), Loader=yaml.FullLoader)
 
@@ -44,8 +45,10 @@ def getRecord(firstTeam, secondTeam):
         matches[year]=newMatches
     total=results[firstTeam]+results[secondTeam]+results['tie']
     if total==0:
-        shutil.copy("static/no_data.png","static/graph.png")
-        return []
+        im = Image.open("static/no_data.png")
+        img = io.BytesIO()
+        im.save(img, "png")
+        return [], base64.b64encode(img.getvalue()).decode('utf-8')
     labels = []
     sizes = []
     if results[firstTeam]!=0:
@@ -68,13 +71,13 @@ def getRecord(firstTeam, secondTeam):
     for year in matches:
         for match in matches[year]:
             info.append(match)
-    path=os.getcwd()
-    try:
-        os.remove(path+"/static/graph.png")
-    except Exception:
-        pass
-    plt.savefig(path+"/static/graph.png")
-    return info
+    img = io.BytesIO()
+    plt.savefig(img, format='png')
+    plt.close()
+    img.seek(0)
+    graph_url = base64.b64encode(img.getvalue()).decode('utf8')
+    return info, graph_url
+    
 
 def getDataForYear(year, firstTeam, secondTeam):
     results={

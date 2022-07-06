@@ -22,19 +22,21 @@ Matplotlib
 ```
 pip install matplotlib
 ```
-
 Flask
 ```
 pip install Flask
 ```
+Pillow
+```
+pip install Pillow
+```
 
-The rest of the dependencies used are standard libraries for Python.
-Those include:
+Python standard libraries used"
 - concurrent.futures
-- os
 - datetime
 - functools
-- shutil
+- base64
+- io
 
 
 ## How does it work
