@@ -34,19 +34,6 @@ Note: Installing Matplotlib automatically installs Pillow. But if you face any i
 pip install Pillow
 ```
 
-Python standard libraries used:
-
-- concurrent.futures
-
-- datetime
-
-- functools
-
-- base64
-
-- io
-
-
 ## How does it work
 
 Once the user inputs 2 FRC teams, the backend code will iterate through all matches available for one of the teams ever since both teams existed. It will check for matches where the two teams played on opposite alliances. All this data will be collected and displayed. The user will see the pie chart showing what percent of matches each team has won and can look at scores from each match.

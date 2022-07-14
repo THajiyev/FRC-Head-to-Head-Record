@@ -7,8 +7,9 @@ from utils import MatchData
 from PIL import Image
 import base64
 import io
+import os
 
-yaml_file = yaml.load(open("keys.yaml"), Loader=yaml.FullLoader)
+yaml_file = yaml.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "keys.yaml")), Loader=yaml.FullLoader)
 
 time_constant = 9999999999999
 
@@ -22,7 +23,10 @@ def getRookieYear(team1, team2):
     link = "https://www.thebluealliance.com/api/v3/team/frc"
     data1=requests.get(url=link+str(team1), headers=headers).json()
     data2=requests.get(url=link+str(team2), headers=headers).json()
-    return max(data1['rookie_year'], data2['rookie_year'])
+    try:
+        return max(data1['rookie_year'], data2['rookie_year'])
+    except Exception:
+        return date.today().year+1
 
 def getRecord(firstTeam, secondTeam):
     results={
@@ -45,7 +49,7 @@ def getRecord(firstTeam, secondTeam):
         matches[year]=newMatches
     total=results[firstTeam]+results[secondTeam]+results['tie']
     if total==0:
-        im = Image.open("static/no_data.png")
+        im = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"static/no_data.png"))
         img = io.BytesIO()
         im.save(img, "png")
         return [], base64.b64encode(img.getvalue()).decode('utf-8')
