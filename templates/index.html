@@ -36,16 +36,23 @@
       }
     }
 </script>
+<script language="javascript">
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    alert("Please use landscape mode for a better experience");
+  }
+</script>
 <div style="position: relative; min-height: 100vh;">
+<a href="https://github.com/THajiyev/FRC-Head-to-Head-Record" target="_blank" style="position: absolute; right: 2vh; top: 0;">GitHub Repository</a>
+<br>
 <form method="POST" id="myform">
     <div style="display: flex; align-content: center;">
     <div style="width: 30%;"></div>
     {% if haveContent==false %}
-    <textarea name="team1"  placeholder="Team #" id="team1" maxlength="5" class="form-control" onkeyup="checkInput(this, event)" style="font-size: large; text-align: center; width: 30%; height: 20%; resize: none ;"></textarea>
-    <textarea name="team2"  placeholder="Team #" id="team2" maxlength="5" class="form-control" onkeyup="checkInput(this, event)" style="font-size: large; text-align: center; width: 30%; height: 20%; resize: none ;"></textarea>
+    <textarea name="team1" class="input_field" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
+    <textarea name="team2" class="input_field" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
      {% else %}
-     <textarea name="team1" placeholder="Team #" id="team1" maxlength="5" class="form-control" onkeyup="checkInput(this, event)" style="font-size: large; text-align: center; width: 30%; height: 20%; resize: none ;">{{team1}}</textarea>
-     <textarea name="team2"  placeholder="Team #" id="team2" maxlength="5" class="form-control" onkeyup="checkInput(this, event)" style="font-size: large; text-align: center; width: 30%; height: 20%; resize: none ;">{{team2}}</textarea>
+     <textarea name="team1" class="input_field" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team1}}</textarea>
+     <textarea name="team2" class="input_field" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team2}}</textarea>
      {% endif %}
      <div style="width: 30%;"></div>
     </div>  
@@ -86,6 +93,6 @@
 {% else %}
 {% endif %}
 <br/><br/><br/>
-<footer id="footer" style="text-align: center;">Powered by The Blue Alliance</footer>
+<footer id="footer" style="text-align: center;">Powered by <a href="https://www.thebluealliance.com" target="_blank">The Blue Alliance</a></footer>
 </div>
 </html>

@@ -4,7 +4,7 @@ This website will allow you to view the head-to-head record of 2 FRC teams based
   
 ## How to use
 
-First, you will need to go to **keys.yaml** and add an authentication key(X-TBA-Auth-Key). It will be used to pull data from The Blue Alliance. Run the code from your terminal by typing in "python main.py"
+First, you go to **keys.yaml** and add an authentication key(X-TBA-Auth-Key). It will be used to pull data from The Blue Alliance. Then run the code from your terminal by typing in "python main.py".
 
 ## Dependencies
 
@@ -40,12 +40,12 @@ Once the user inputs 2 FRC teams, the backend code will iterate through all matc
 
 ## Input Teams
 
-<a href="https://drive.google.com/file/d/1u2HEUxGJIUWXWwi-g_UWAS_F-bT45lgT/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1u2HEUxGJIUWXWwi-g_UWAS_F-bT45lgT"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
+<a  href="https://drive.google.com/file/d/11UkZkzCggJ3bCithM52NkDtbIXs3EM-5/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=11UkZkzCggJ3bCithM52NkDtbIXs3EM-5"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
 
 ## View Record
 
-<a href="https://drive.google.com/file/d/1P8s0Um2h7Zd7HGYhsIBcqTmjIxrqgkNZ/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1P8s0Um2h7Zd7HGYhsIBcqTmjIxrqgkNZ"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
-  
-## Finally
+<a  href="https://drive.google.com/file/d/1PV7EUf9JC3LdVI9NguNJYJsm2SUdwNKm/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1PV7EUf9JC3LdVI9NguNJYJsm2SUdwNKm"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
 
-Enjoy using this website, and let me know if you have any questions, comments, or concerns.
+## License
+
+MIT

@@ -1,3 +1,11 @@
+.input_field {
+    font-size: large; 
+    text-align: center; 
+    width: 30%; 
+    height: 20%; 
+    resize: none;
+}
+
 .row {
     display: flex;
 }
