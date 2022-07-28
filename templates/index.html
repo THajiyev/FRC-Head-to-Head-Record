@@ -5,6 +5,11 @@
  <title>{{team1}} vs {{team2}}</title>
  {% else %}
  <title>Compare Teams</title>
+ <script language="javascript">
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    alert("Please use landscape mode for a better experience");
+  }
+</script>
  {% endif %}
  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
  <meta charset="utf-8" />
@@ -35,11 +40,6 @@
         ob.value = ob.value.replace(invalidChars,"");
       }
     }
-</script>
-<script language="javascript">
-  if (window.matchMedia("(orientation: portrait)").matches) {
-    alert("Please use landscape mode for a better experience");
-  }
 </script>
 <div style="position: relative; min-height: 100vh;">
 <a href="https://github.com/THajiyev/FRC-Head-to-Head-Record" target="_blank" style="position: absolute; right: 2vh; top: 0;">GitHub Repository</a>
