@@ -48,11 +48,11 @@
     <div style="display: flex; align-content: center;">
     <div style="width: 30%;"></div>
     {% if haveContent==false %}
-    <textarea name="team1" class="input_field" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
-    <textarea name="team2" class="input_field" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
+    <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
+    <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
      {% else %}
-     <textarea name="team1" class="input_field" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team1}}</textarea>
-     <textarea name="team2" class="input_field" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team2}}</textarea>
+     <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team1}}</textarea>
+     <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team2}}</textarea>
      {% endif %}
      <div style="width: 30%;"></div>
     </div>  
