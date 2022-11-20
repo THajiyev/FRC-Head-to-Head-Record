@@ -68,7 +68,6 @@ def getRecord(firstTeam, secondTeam):
     ax1.pie(sizes, labels=labels, autopct='%1.1f%%',startangle=90)
     ax1.axis('equal') 
     plt.legend()
-    plt.title("H2H Record")
     plt.figtext(.5, .05, str(firstTeam)+" "+str(results[firstTeam])+":"+str(results[secondTeam])+" "+str(secondTeam), ha='center')
     dict(sorted(matches.items()))
     info=[]
@@ -76,7 +75,7 @@ def getRecord(firstTeam, secondTeam):
         for match in matches[year]:
             info.append(match)
     img = io.BytesIO()
-    plt.savefig(img, format='png')
+    plt.savefig(img, format='png',transparent=True)
     plt.close()
     img.seek(0)
     graph_url = base64.b64encode(img.getvalue()).decode('utf8')

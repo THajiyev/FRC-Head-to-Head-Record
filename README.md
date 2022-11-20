@@ -6,11 +6,11 @@ This website will allow you to view the head-to-head record of 2 FRC teams based
 
 ## Input Teams
 
-<a  href="https://drive.google.com/file/d/11UkZkzCggJ3bCithM52NkDtbIXs3EM-5/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=11UkZkzCggJ3bCithM52NkDtbIXs3EM-5"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
+<a  href="https://drive.google.com/file/d/1R1Egl5CHWHSyMykftGw7s2eiMyMTyJZn/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1R1Egl5CHWHSyMykftGw7s2eiMyMTyJZn"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
 
 ## View Record
 
-<a  href="https://drive.google.com/file/d/1PV7EUf9JC3LdVI9NguNJYJsm2SUdwNKm/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1PV7EUf9JC3LdVI9NguNJYJsm2SUdwNKm"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
+<a  href="https://drive.google.com/file/d/1f2qRmGM6XFkebKO-1YCW4IT3rji7QCKe/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1f2qRmGM6XFkebKO-1YCW4IT3rji7QCKe"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
 
 ## Set up
 

@@ -40,24 +40,27 @@ if (window.matchMedia("(orientation: portrait)").matches) {
     }
 </script>
 </head>
-<body> 
+<body style="background-color:aliceblue;"> 
 <div style="position: relative; min-height: 100vh;">
 <a href="https://github.com/THajiyev/FRC-Head-to-Head-Record" target="_blank" style="position: absolute; right: .5vw; top: 0;">GitHub Repository</a>
 <br>
 <form method="POST" id="myform">
     <div style="display: flex; align-content: center;">
-    <div style="width: 30%;"></div>
+    <div style="width: 29.5%;"></div>
     {% if haveContent==false %}
     <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
+    <div style="width: 1%;"></div>
     <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
     {% else %}
     <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team1}}</textarea>
+    <div style="width: 1%;"></div>
     <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team2}}</textarea>
     {% endif %}
-    <div style="width: 30%;"></div>
+    <div style="width: 29.5%;"></div>
     </div>  
+    <br/>
     <div align="center">
-    <button type="submit" class="btn btn-primary" style="width: 20%;" id="get_record">Compare</button>
+    <button type="submit" class="btn btn-primary" style="width: 20%; background-color: green; border-radius: .5vw; color:white;" id="get_record">Compare</button>
     </div>
 </form>
 <br>
