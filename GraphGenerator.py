@@ -25,7 +25,7 @@ def getRookieYear(team1, team2):
     data2=requests.get(url=link+str(team2), headers=headers).json()
     try:
         return max(data1['rookie_year'], data2['rookie_year'])
-    except Exception:
+    except:
         return date.today().year+1
 
 def getRecord(firstTeam, secondTeam):
@@ -92,7 +92,7 @@ def getDataForYear(year, firstTeam, secondTeam):
     try:
         link = "https://www.thebluealliance.com/api/v3/team/frc"+str(firstTeam)+"/matches/"+str(year)
         data=requests.get(url=link, headers=headers).json()
-    except Exception:
+    except:
         print("Could not pull data")
     try:
         for result in data:
@@ -105,7 +105,7 @@ def getDataForYear(year, firstTeam, secondTeam):
                     winner='none'
                 try:
                     time = int(result['actual_time'])
-                except Exception:
+                except:
                     time = time_constant
                 if "frc"+str(firstTeam) in result['alliances']['blue']['team_keys']:
                     mainTeamAlliance='blue'
@@ -148,7 +148,7 @@ def getDataForYear(year, firstTeam, secondTeam):
                 else:
                     results[secondTeam]=results[secondTeam]+1
         matches = sorted(matches)
-    except Exception:
+    except:
         print("Failed to get data for year "+str(year))
     return results, matches, year
 

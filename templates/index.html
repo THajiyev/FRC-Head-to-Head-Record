@@ -7,23 +7,7 @@
 <title>{{team1}} vs {{team2}}</title>
 {% else %}
 <title>Compare Teams</title>
-<script language="javascript">
-if (window.matchMedia("(orientation: portrait)").matches) {
-  alert("Please use landscape mode for a better experience");
-}
-</script>
 {% endif %}
-<style>
-  table, th, td {
-      border:1px solid black;
-  } 
-  input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
-</style>
 <script language="javascript">
     function checkInput(ob, event) 
     {
@@ -42,33 +26,31 @@ if (window.matchMedia("(orientation: portrait)").matches) {
 </head>
 <body style="background-color:aliceblue;"> 
 <div style="position: relative; min-height: 100vh;">
-<a href="https://github.com/THajiyev/FRC-Head-to-Head-Record" target="_blank" style="position: absolute; right: .5vw; top: 0;">GitHub Repository</a>
-<br>
 <form method="POST" id="myform">
-    <div style="display: flex; align-content: center;">
-    <div style="width: 29.5%;"></div>
+    <div class="text-area-container">
+    <div class="big-space-holder"></div>
     {% if haveContent==false %}
     <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
-    <div style="width: 1%;"></div>
+    <div class="small-space-holder"></div>
     <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
     {% else %}
     <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team1}}</textarea>
-    <div style="width: 1%;"></div>
+    <div class="small-space-holder"></div>
     <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team2}}</textarea>
     {% endif %}
-    <div style="width: 29.5%;"></div>
+    <div class="big-space-holder"></div>
     </div>  
     <br/>
-    <div align="center">
-    <button type="submit" class="btn btn-primary" style="width: 20%; background-color: green; border-radius: .5vw; color:white;" id="get_record">Compare</button>
+    <div class="centered-div">
+    <button type="submit" class="btn btn-primary" id="get_record">Compare</button>
     </div>
 </form>
 <br>
 {% if haveContent %}
 <div class="row">
 <div class="text_column">
-<table style="width:100%">
-    <tr style="text-align: center;">
+<table style="width:100%;">
+    <tr>
         <td>Team 1</td>
         <td>Score 1</td>
         <td>Score 2</td>
@@ -76,7 +58,7 @@ if (window.matchMedia("(orientation: portrait)").matches) {
         <td>Year</td>
     </tr>
     {% for match in information %}
-    <tr style="text-align: center;">
+    <tr>
         <td>{{match.firstTeam}}</td>
         <td>{{match.firstTeamScore}}</td>
         <td>{{match.secondTeamScore}}</td>
@@ -86,8 +68,8 @@ if (window.matchMedia("(orientation: portrait)").matches) {
     {% endfor %}
 </table>
 </div> 
-<div class="pic_column" align="middle">
-  <img src="data:image/png;base64, {{ graph_url }}" align="middle">
+<div class="pic_column" class="centered-div">
+  <img src="data:image/png;base64, {{ graph_url }}">
 </div>
 </div>
 {% endif %}

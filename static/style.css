@@ -1,3 +1,23 @@
+button {
+    width: 20%; 
+    background-color: green; 
+    border-radius: .5vw; 
+    color:white;
+}
+
+.big-space-holder {
+    width: 29.5%;
+}
+
+.text-area-container {
+    display: flex; 
+    align-content: center;
+}
+
+.small-space-holder {
+    width: 1%;
+}
+
 .form-control {
     font-size: large;
     text-align: center;
@@ -16,6 +36,8 @@
 .pic_column {
     flex: 59%;
     padding: 5px;
+    justify-content: center; 
+    text-align: center;
 }
 
 .text_column {
@@ -24,8 +46,17 @@
 }
 
 img {
-    width: 80%;
-    height: auto;
+    object-fit: cover; 
+}
+
+tr {
+    text-align: center;
+}
+
+.centered-div {
+    display: flex;
+    justify-content: center; 
+    text-align: center;
 }
 
 #footer {
@@ -35,6 +66,62 @@ img {
     height: 2.5rem;
 }
 
+table, th, td {
+    border:1px solid black;
+} 
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
 tr:nth-child(even) {
     background-color: rgb(220, 228, 235);
+}
+
+@media (max-width: 1000px) {
+    .row {
+        display: inline;
+    }
+    img {
+        object-fit:fill;
+        width: 100%;
+        height: auto;
+    }
+    .pic_column {
+        flex: none;
+    }
+    button {
+        width: 30%;
+        height: 40px;
+        font-size: 20px;
+    }
+    .big-space-holder {
+        width: 0;
+    }
+    .small-space-holder{
+        width: 0;
+        height: 15px;
+    }
+    .form-control {
+        width: 40vw;
+        height: 50px;
+        font-size: 20px;
+    }
+    .text-area-container {
+        flex-flow: column wrap;
+    }
+    .text_column {
+        width: 70vw;
+        margin: 0 auto;
+    }
+    table {
+        margin: 0 auto;
+    }
+    td {
+        height: 30px;
+        font-size: 20px;
+    }
 }
