@@ -9,19 +9,13 @@
 <title>Compare Teams</title>
 {% endif %}
 <script language="javascript">
-    function checkInput(ob, event) 
-    {
-      var invalidChars = /[^0-9]/gi
-      if (event.keyCode == 13) 
-      {
-        ob.value = ob.value.replace(invalidChars,"");
-        document.getElementById("myform").submit();
-      }
-      else if(invalidChars.test(ob.value)) 
-      {
-        ob.value = ob.value.replace(invalidChars,"");
-      }
-    }
+function checkInput(event) 
+{
+  if (event.keyCode == 13) 
+  {
+    document.getElementById("myform").submit();
+  }
+}
 </script>
 </head>
 <body style="background-color:aliceblue;"> 
@@ -30,17 +24,17 @@
     <div class="text-area-container">
     <div class="big-space-holder"></div>
     {% if haveContent==false %}
-    <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
+    <input type="number" name="team1" placeholder="Team #" id="team1" onkeyup="checkInput(event)">
     <div class="small-space-holder"></div>
-    <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)"></textarea>
+    <input type="number" name="team2" placeholder="Team #" id="team2" onkeyup="checkInput(event)">
     {% else %}
-    <textarea name="team1" placeholder="Team #" id="team1" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team1}}</textarea>
+    <input type="number" name="team1" id="team1" onkeyup="checkInput(event)" value="{{team1}}">
     <div class="small-space-holder"></div>
-    <textarea name="team2" placeholder="Team #" id="team2" maxlength="4" class="form-control" onkeyup="checkInput(this, event)">{{team2}}</textarea>
+    <input type="number" name="team2" id="team2" onkeyup="checkInput(event)" value="{{team2}}">
     {% endif %}
     <div class="big-space-holder"></div>
     </div>  
-    <br/>
+    <br>
     <div class="centered-div">
     <button type="submit" class="btn btn-primary" id="get_record">Compare</button>
     </div>
@@ -68,12 +62,14 @@
     {% endfor %}
 </table>
 </div> 
-<div class="pic_column" class="centered-div">
+<div class="pic_column">
   <img src="data:image/png;base64, {{ graph_url }}">
 </div>
 </div>
 {% endif %}
-<br/><br/><br/>
+<br>
+<br>
+<br>
 <footer id="footer" style="text-align: center;">Powered by <a href="https://www.thebluealliance.com" target="_blank">The Blue Alliance</a></footer>
 </div>
 </body>

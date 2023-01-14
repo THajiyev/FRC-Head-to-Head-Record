@@ -4,14 +4,6 @@
 
 This website will allow you to view the head-to-head record of 2 FRC teams based on the data available on The Blue Alliance.
 
-## Input Teams
-
-<a  href="https://drive.google.com/file/d/1R1Egl5CHWHSyMykftGw7s2eiMyMTyJZn/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1R1Egl5CHWHSyMykftGw7s2eiMyMTyJZn"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
-
-## View Record
-
-<a  href="https://drive.google.com/file/d/1f2qRmGM6XFkebKO-1YCW4IT3rji7QCKe/view?usp=sharing"><img  src="https://drive.google.com/uc?export=view&id=1f2qRmGM6XFkebKO-1YCW4IT3rji7QCKe"  style="width: 650px; max-width: 100%; height: auto"  title=""/>
-
 ## Set up
 
 First, go to **keys.yaml** and add an authentication key(X-TBA-Auth-Key). It will be used to pull data from The Blue Alliance. 
