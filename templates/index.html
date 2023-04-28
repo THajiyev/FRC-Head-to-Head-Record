@@ -54,8 +54,16 @@ function checkInput(event)
     {% for match in information %}
     <tr>
         <td>{{match.firstTeam}}</td>
+        {% if match.firstTeamScore|float>match.secondTeamScore|float %}
+        <td style="font-weight: bold;">{{match.firstTeamScore}}</td>
+        {% else %}
         <td>{{match.firstTeamScore}}</td>
+        {% endif %}
+        {% if match.secondTeamScore|float>match.firstTeamScore|float %}
+        <td style="font-weight: bold;">{{match.secondTeamScore}}</td>
+        {% else %}
         <td>{{match.secondTeamScore}}</td>
+        {% endif %}
         <td>{{match.secondTeam}}</td>
         <td>{{match.year}}</td>
     </tr>

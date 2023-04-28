@@ -67,15 +67,20 @@ def getRecord(firstTeam, secondTeam):
     _, ax1 = plt.subplots()
     ax1.pie(sizes, labels=labels, autopct='%1.1f%%',startangle=90)
     ax1.axis('equal') 
+    ax1.margins(0)
+    ax1.spines['right'].set_visible(False)
+    ax1.spines['top'].set_visible(False)
+    ax1.spines['left'].set_position(('data', 0))
+    ax1.spines['bottom'].set_position(('data', 0))
     plt.legend()
-    plt.figtext(.5, .05, str(firstTeam)+" "+str(results[firstTeam])+":"+str(results[secondTeam])+" "+str(secondTeam), ha='center')
+    plt.figtext(.5, 0, str(firstTeam)+" "+str(results[firstTeam])+":"+str(results[secondTeam])+" "+str(secondTeam), ha='center')
     dict(sorted(matches.items()))
     info=[]
     for year in matches:
         for match in matches[year]:
             info.append(match)
     img = io.BytesIO()
-    plt.savefig(img, format='png',transparent=True)
+    plt.savefig(img, format='png',transparent=True, bbox_inches='tight')
     plt.close()
     img.seek(0)
     graph_url = base64.b64encode(img.getvalue()).decode('utf8')
@@ -102,7 +107,10 @@ def getDataForYear(year, firstTeam, secondTeam):
                 if int(result['alliances']['red']['score'])>int(result['alliances']['blue']['score']):
                     winner='red'
                 elif int(result['alliances']['red']['score'])==int(result['alliances']['blue']['score']):
-                    winner='none'
+                    if result['winning_alliance']=='':
+                        winner='none'
+                    else:
+                        winner=result['winning_alliance']
                 try:
                     time = int(result['actual_time'])
                 except:
@@ -110,37 +118,37 @@ def getDataForYear(year, firstTeam, secondTeam):
                 if "frc"+str(firstTeam) in result['alliances']['blue']['team_keys']:
                     mainTeamAlliance='blue'
                     matches.append(
-                                    MatchData(
-                                        [
-                                            time,
-                                            int(result['alliances']['blue']['score']),
-                                            int(result['alliances']['red']['score']),
-                                            result['event_key'],
-                                            result['comp_level'],
-                                            int(result['match_number'])
-                                        ],
-                                        firstTeam, 
-                                        secondTeam, 
-                                        year
-                                   )
-                                 )               
+                        MatchData(
+                            [
+                                time,
+                                int(result['alliances']['blue']['score']),
+                                int(result['alliances']['red']['score']),
+                                result['event_key'],
+                                result['comp_level'],
+                                int(result['match_number'])
+                            ],
+                            firstTeam, 
+                            secondTeam, 
+                            year
+                        )
+                    )               
                 else:
                     mainTeamAlliance = 'red'
                     matches.append( 
-                                    MatchData(
-                                        [
-                                            time,
-                                            int(result['alliances']['red']['score']), 
-                                            int(result['alliances']['blue']['score']),
-                                            result['event_key'],
-                                            result['comp_level'],
-                                            int(result['match_number'])
-                                        ],
-                                        firstTeam, 
-                                        secondTeam, 
-                                        year
-                                    )
-                                  )
+                        MatchData(
+                            [
+                                time,
+                                int(result['alliances']['red']['score']), 
+                                int(result['alliances']['blue']['score']),
+                                result['event_key'],
+                                result['comp_level'],
+                                int(result['match_number'])
+                            ],
+                            firstTeam, 
+                            secondTeam, 
+                            year
+                        )
+                    )
                 if winner=='none':
                     results['tie']=results['tie']+1
                 elif winner==mainTeamAlliance:

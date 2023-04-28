@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, Blueprint, redirect, url_for
-import GraphGenerator
+import graphing
 
 app = Flask(__name__)
 
@@ -23,7 +23,7 @@ def custom(team1, team2):
             return redirect(url_for('custom', team1=team1, team2=team2))
         return redirect(url_for('home'))
     try:
-        info, graph_url = GraphGenerator.getRecord(team1, team2)
+        info, graph_url = graphing.getRecord(team1, team2)
         return render_template('index.html', haveContent=True, information=info, team1=str(team1), team2=str(team2), graph_url=graph_url)
     except:
         return render_template('index.html', haveContent=False)

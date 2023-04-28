@@ -56,6 +56,7 @@ input[type=number] {
 
 img {
     object-fit: cover; 
+    margin-top: 10vh;
 }
 
 tr {
